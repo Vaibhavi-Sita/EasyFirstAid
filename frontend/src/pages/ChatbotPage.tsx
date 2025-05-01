@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import {
   Box,
   Container,
@@ -39,6 +40,13 @@ const KidMessage = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.main,
     color: 'white',
   },
+  '& p': {
+    margin: 0,
+    whiteSpace: 'pre-wrap',
+  },
+  '& strong': {
+    fontWeight: 600,
+  },
 }));
 
 const ElderlyMessage = styled(Paper)(({ theme }) => ({
@@ -52,6 +60,13 @@ const ElderlyMessage = styled(Paper)(({ theme }) => ({
   '&.bot': {
     backgroundColor: theme.palette.mode === 'dark' ? '#ffffff10' : '#00000010',
     color: theme.palette.text.primary,
+  },
+  '& p': {
+    margin: 0,
+    whiteSpace: 'pre-wrap',
+  },
+  '& strong': {
+    fontWeight: 600,
   },
 }));
 
@@ -129,15 +144,15 @@ const ChatbotPage = ({ mode }: ChatbotPageProps) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8080/api/chat', {
+      const response = await fetch('http://localhost:3001/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          user: mode,
-          topic,
-          question: input
+          message: input,
+          mode: mode === 'kid' ? 'kids' : 'elderly',
+          topic
         }),
       });
 
@@ -150,7 +165,7 @@ const ChatbotPage = ({ mode }: ChatbotPageProps) => {
       setMessages(prev => [
         ...prev,
         {
-          text: data.message,
+          text: data.response,
           sender: 'bot',
         },
       ]);
@@ -294,16 +309,25 @@ const ChatbotPage = ({ mode }: ChatbotPageProps) => {
                   <MessageComponent
                     className={message.sender === 'bot' ? 'bot' : ''}
                   >
-                    <Typography
-                      sx={{
-                        fontSize: '1.2rem',
-                        fontWeight: 500,
-                        letterSpacing: '0.3px',
-                        lineHeight: 1.5,
+                    <ReactMarkdown
+                      components={{
+                        p: ({ children }) => (
+                          <Typography
+                            component="p"
+                            sx={{
+                              fontSize: '1.2rem',
+                              fontWeight: 500,
+                              letterSpacing: '0.3px',
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            {children}
+                          </Typography>
+                        ),
                       }}
                     >
                       {message.text}
-                    </Typography>
+                    </ReactMarkdown>
                   </MessageComponent>
                 </Box>
               ))}
