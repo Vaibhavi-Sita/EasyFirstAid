@@ -123,15 +123,3 @@ Security Best Practices
      * System files (.DS_Store, Thumbs.db)
      * Log files
      * Temporary files
-
-License
--------
-[Add your license information here]
-
-Contributing
------------
-[Add contribution guidelines here]
-
-Contact
--------
-[Add contact information here] 
