@@ -1,55 +1,142 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Box, Container, IconButton, Typography, Button, useTheme } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ChatIcon from '@mui/icons-material/Chat';
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import EmergencyIcon from '@mui/icons-material/Emergency';
-import AirIcon from '@mui/icons-material/Air';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import SickIcon from '@mui/icons-material/Sick';
-import BugReportIcon from '@mui/icons-material/BugReport';
-import ThermostatIcon from '@mui/icons-material/Thermostat';
-import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
-import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
-import FitbitIcon from '@mui/icons-material/Fitbit';
-import BandageIcon from '@mui/icons-material/Healing';
-import WarningIcon from '@mui/icons-material/Warning';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
-import PetsIcon from '@mui/icons-material/Pets';
+import { useLocation, useNavigate } from 'react-router-dom'
+import {
+  Box,
+  Container,
+  IconButton,
+  Typography,
+  Button,
+  useTheme,
+} from '@mui/material'
+import { styled } from '@mui/material/styles'
+import HomeIcon from '@mui/icons-material/Home'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import ChatIcon from '@mui/icons-material/Chat'
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment'
+import PsychologyIcon from '@mui/icons-material/Psychology'
+import EmergencyIcon from '@mui/icons-material/Emergency'
+import AirIcon from '@mui/icons-material/Air'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import AcUnitIcon from '@mui/icons-material/AcUnit'
+import SickIcon from '@mui/icons-material/Sick'
+import BugReportIcon from '@mui/icons-material/BugReport'
+import ThermostatIcon from '@mui/icons-material/Thermostat'
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt'
+import RestaurantIcon from '@mui/icons-material/Restaurant'
+import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt'
+import FitbitIcon from '@mui/icons-material/Fitbit'
+import BandageIcon from '@mui/icons-material/Healing'
+import WarningIcon from '@mui/icons-material/Warning'
+import WbSunnyIcon from '@mui/icons-material/WbSunny'
+import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined'
+import PetsIcon from '@mui/icons-material/Pets'
 
 interface HelpPageProps {
-  mode: 'kid' | 'elderly';
+  mode: 'kid' | 'elderly'
 }
 
 const categories = [
-  { icon: <LocalHospitalIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🩸', name: 'Bleeding and Wounds' },
-  { icon: <LocalFireDepartmentIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🔥', name: 'Burns and Scalds' },
-  { icon: <PsychologyIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🤕', name: 'Head Injuries' },
-  { icon: <EmergencyIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🦴', name: 'Fractures and Sprains' },
-  { icon: <FitbitIcon sx={{ fontSize: '2.5rem' }} />, emoji: '😵', name: 'Fainting and Unconsciousness' },
-  { icon: <AirIcon sx={{ fontSize: '2.5rem' }} />, emoji: '😮‍💨', name: 'Breathing Difficulties' },
-  { icon: <FavoriteIcon sx={{ fontSize: '2.5rem' }} />, emoji: '❤️‍🩹', name: 'Chest Pain and Heart Attack' },
-  { icon: <AcUnitIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🧊', name: 'Heatstroke and Hypothermia' },
-  { icon: <SickIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🤢', name: 'Poisoning' },
-  { icon: <BugReportIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🐝', name: 'Insect Bites and Stings' },
-  { icon: <ThermostatIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🤒', name: 'Fever and Illness' },
-  { icon: <ElectricBoltIcon sx={{ fontSize: '2.5rem' }} />, emoji: '⚡', name: 'Electrical Injuries' },
-  { icon: <RestaurantIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🍽️', name: 'Choking' },
-  { icon: <PsychologyAltIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🧠', name: 'Stroke' },
-  { icon: <FitbitIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🥴', name: 'Seizures' },
-  { icon: <BandageIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🩹', name: 'Minor Injuries' },
-  { icon: <WarningIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🩺', name: 'Allergic Reactions' },
-  { icon: <WbSunnyIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🌡️', name: 'Heat Exhaustion' },
-  { icon: <AcUnitOutlinedIcon sx={{ fontSize: '2.5rem' }} />, emoji: '❄️', name: 'Frostbite' },
-  { icon: <PetsIcon sx={{ fontSize: '2.5rem' }} />, emoji: '🐍', name: 'Snake Bites' },
-];
+  {
+    icon: <LocalHospitalIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🩸',
+    name: 'Bleeding and Wounds',
+  },
+  {
+    icon: <LocalFireDepartmentIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🔥',
+    name: 'Burns and Scalds',
+  },
+  {
+    icon: <PsychologyIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🤕',
+    name: 'Head Injuries',
+  },
+  {
+    icon: <EmergencyIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🦴',
+    name: 'Fractures and Sprains',
+  },
+  {
+    icon: <FitbitIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '😵',
+    name: 'Fainting and Unconsciousness',
+  },
+  {
+    icon: <AirIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '😮‍💨',
+    name: 'Breathing Difficulties',
+  },
+  {
+    icon: <FavoriteIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '❤️‍🩹',
+    name: 'Chest Pain and Heart Attack',
+  },
+  {
+    icon: <AcUnitIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🧊',
+    name: 'Heatstroke and Hypothermia',
+  },
+  {
+    icon: <SickIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🤢',
+    name: 'Poisoning',
+  },
+  {
+    icon: <BugReportIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🐝',
+    name: 'Insect Bites and Stings',
+  },
+  {
+    icon: <ThermostatIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🤒',
+    name: 'Fever and Illness',
+  },
+  {
+    icon: <ElectricBoltIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '⚡',
+    name: 'Electrical Injuries',
+  },
+  {
+    icon: <RestaurantIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🍽️',
+    name: 'Choking',
+  },
+  {
+    icon: <PsychologyAltIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🧠',
+    name: 'Stroke',
+  },
+  {
+    icon: <FitbitIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🥴',
+    name: 'Seizures',
+  },
+  {
+    icon: <BandageIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🩹',
+    name: 'Minor Injuries',
+  },
+  {
+    icon: <WarningIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🩺',
+    name: 'Allergic Reactions',
+  },
+  {
+    icon: <WbSunnyIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🌡️',
+    name: 'Heat Exhaustion',
+  },
+  {
+    icon: <AcUnitOutlinedIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '❄️',
+    name: 'Frostbite',
+  },
+  {
+    icon: <PetsIcon sx={{ fontSize: '2.5rem' }} />,
+    emoji: '🐍',
+    name: 'Snake Bites',
+  },
+]
 
 const KidIconButton = styled(IconButton)(({ theme }) => ({
   width: '100%',
@@ -71,7 +158,7 @@ const KidIconButton = styled(IconButton)(({ theme }) => ({
     fontSize: '2.5rem',
     animation: 'pulse 2s infinite',
   },
-}));
+}))
 
 const ElderlyIconButton = styled(IconButton)(({ theme }) => ({
   width: '100%',
@@ -81,7 +168,9 @@ const ElderlyIconButton = styled(IconButton)(({ theme }) => ({
   alignItems: 'center',
   gap: theme.spacing(2),
   padding: theme.spacing(2),
-  border: `1px solid ${theme.palette.mode === 'dark' ? '#ffffff40' : '#00000040'}`,
+  border: `1px solid ${
+    theme.palette.mode === 'dark' ? '#ffffff40' : '#00000040'
+  }`,
   borderRadius: '12px',
   backgroundColor: theme.palette.background.paper,
   color: theme.palette.text.primary,
@@ -91,7 +180,7 @@ const ElderlyIconButton = styled(IconButton)(({ theme }) => ({
     transform: 'translateY(-2px)',
     boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
   },
-}));
+}))
 
 const KidGeneralButton = styled(Button)(({ theme }) => ({
   width: '100%',
@@ -123,7 +212,7 @@ const KidGeneralButton = styled(Button)(({ theme }) => ({
       transform: 'translateY(-10px)',
     },
   },
-}));
+}))
 
 const ElderlyGeneralButton = styled(Button)(({ theme }) => ({
   width: '100%',
@@ -140,14 +229,16 @@ const ElderlyGeneralButton = styled(Button)(({ theme }) => ({
   fontSize: '1.4rem',
   fontWeight: 600,
   letterSpacing: '0.5px',
-  border: `1px solid ${theme.palette.mode === 'dark' ? '#ffffff40' : '#00000040'}`,
+  border: `1px solid ${
+    theme.palette.mode === 'dark' ? '#ffffff40' : '#00000040'
+  }`,
   transition: 'all 0.2s ease-in-out',
   '&:hover': {
     backgroundColor: theme.palette.mode === 'dark' ? '#ffffff30' : '#00000020',
     transform: 'translateY(-2px)',
     boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
   },
-}));
+}))
 
 const NavigationButton = styled(Button)(({ theme }) => ({
   position: 'fixed',
@@ -159,33 +250,33 @@ const NavigationButton = styled(Button)(({ theme }) => ({
   '&:hover': {
     backgroundColor: theme.palette.background.paper,
   },
-}));
+}))
 
 const HelpPage = ({ mode }: HelpPageProps) => {
-  const navigate = useNavigate();
-  const theme = useTheme();
-  const IconButtonComponent = mode === 'kid' ? KidIconButton : ElderlyIconButton;
-  const GeneralButton = mode === 'kid' ? KidGeneralButton : ElderlyGeneralButton;
+  const navigate = useNavigate()
+  const theme = useTheme()
+  const IconButtonComponent = mode === 'kid' ? KidIconButton : ElderlyIconButton
+  const GeneralButton = mode === 'kid' ? KidGeneralButton : ElderlyGeneralButton
 
   const handleCategoryClick = (category: string) => {
-    navigate('/chatbot', { 
-      state: { 
-        mode, 
+    navigate('/chatbot', {
+      state: {
+        mode,
         topic: category,
-        initialMessage: `I need help with ${category.toLowerCase()}. What should I do?`
-      } 
-    });
-  };
+        initialMessage: `I need help with ${category.toLowerCase()}. What should I do?`,
+      },
+    })
+  }
 
   const handleGeneralChat = () => {
-    navigate('/chatbot', { 
-      state: { 
-        mode, 
+    navigate('/chatbot', {
+      state: {
+        mode,
         topic: 'General',
-        initialMessage: "Hi, I need some first aid help. Can you assist me?"
-      } 
-    });
-  };
+        initialMessage: 'Hi, I need some first aid help. Can you assist me?',
+      },
+    })
+  }
 
   return (
     <Box
@@ -225,9 +316,9 @@ const HelpPage = ({ mode }: HelpPageProps) => {
       </Box>
 
       <Typography
-        variant="h1"
-        component="h1"
-        align="center"
+        variant='h1'
+        component='h1'
+        align='center'
         sx={{
           color: 'text.primary',
           fontWeight: 700,
@@ -244,19 +335,20 @@ const HelpPage = ({ mode }: HelpPageProps) => {
           <GeneralButton
             onClick={handleGeneralChat}
             sx={{
-              background: mode === 'elderly' 
-                ? 'none'
-                : `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+              background:
+                mode === 'elderly'
+                  ? 'none'
+                  : `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
             }}
           >
             {mode === 'elderly' ? (
               <ChatIcon sx={{ fontSize: '2.5rem' }} />
             ) : (
-              <span className="emoji">💬</span>
+              <span className='emoji'>💬</span>
             )}
-            <Typography 
-              variant="h4" 
-              component="span"
+            <Typography
+              variant='h4'
+              component='span'
               sx={{
                 fontWeight: 600,
                 letterSpacing: '0.5px',
@@ -280,10 +372,14 @@ const HelpPage = ({ mode }: HelpPageProps) => {
               onClick={() => handleCategoryClick(category.name)}
               aria-label={category.name}
             >
-              {mode === 'elderly' ? category.icon : <span className="emoji">{category.emoji}</span>}
+              {mode === 'elderly' ? (
+                category.icon
+              ) : (
+                <span className='emoji'>{category.emoji}</span>
+              )}
               <Typography
-                variant="h6"
-                align="left"
+                variant='h6'
+                align='left'
                 sx={{
                   fontSize: '1.2rem',
                   fontWeight: 600,
@@ -298,7 +394,7 @@ const HelpPage = ({ mode }: HelpPageProps) => {
         </Box>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default HelpPage; 
+export default HelpPage
