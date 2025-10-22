@@ -1,125 +1,160 @@
-Easy First Aid Application
-=========================
+<div align="center">
 
-A modern web application designed to provide quick and accessible first aid information and guidance.
+# 🩺 Easy First Aid
 
-Project Structure
-----------------
-The project consists of two main components:
-1. Frontend (React + TypeScript)
-2. Backend (Node.js + Express)
+### A Modern AI-Powered First Aid Assistant  
+Helping kids and older adults get **quick, accessible, and reliable** medical guidance in emergencies.
 
-Frontend
---------
-Location: /frontend
-- Built with React 19 and TypeScript
-- Uses Material-UI (MUI) for modern UI components
-- Features:
-  * Modern, responsive user interface
-  * React Router for navigation
-  * Markdown support for content rendering
-  * TypeScript for type safety
+[![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=node.js)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express.js-Backend-lightgrey?logo=express)](https://expressjs.com/)
+[![MUI](https://img.shields.io/badge/MUI-7-blue?logo=mui)](https://mui.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Backend
--------
-Location: /backend2
-- Node.js server with Express
-- Features:
-  * RESTful API endpoints
-  * Google Generative AI integration
-  * CORS support
-  * Environment variable configuration
+</div>
 
-Getting Started
---------------
-1. Frontend Setup:
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
+---
 
-2. Backend Setup:
-   ```bash
-   cd backend2
-   npm install
-   npm run dev
-   ```
+## 🚀 Overview
+**Easy First Aid** is a full-stack web application that provides instant, easy-to-understand first aid guidance.  
+Built for accessibility and responsiveness, it integrates **Google Generative AI** to deliver conversational and visual help for emergency scenarios.
 
-Prerequisites
-------------
-- Node.js (Latest LTS version recommended)
-- npm (comes with Node.js)
-- Google AI API key (for backend functionality)
+---
 
-Environment Setup
----------------
-1. Create a .env file in the backend2 directory with the following variables:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   PORT=3001
-   ```
+## 🏗️ Project Structure
+```bash
+EasyFirstAid/
+├── frontend/   # React + TypeScript + Vite
+└── backend2/   # Node.js + Express + Google AI Integration
+```
 
-2. Important Security Notes:
-   - Never commit .env files to version control
-   - Keep your API keys secure and private
-   - Use environment variables for all sensitive information
-   - The .gitignore file is configured to prevent committing sensitive files
+---
 
-Development
-----------
-- Frontend runs on: http://localhost:5173 (default Vite port)
-- Backend runs on: http://localhost:3000 (default Express port)
+## 🎨 Frontend (React + TypeScript)
+**Location:** `/frontend`
 
-Building for Production
----------------------
-Frontend:
+### ✨ Features
+- Modern, responsive UI with Material UI  
+- Intuitive navigation via React Router  
+- Markdown rendering for formatted first aid content  
+- Built with TypeScript for strong typing and scalability  
+
+### 🧩 Tech Stack
+- React 19  
+- Vite  
+- Material UI 7  
+- React Router 7  
+- TypeScript  
+
+---
+
+## ⚙️ Backend (Node.js + Express)
+**Location:** `/backend2`
+
+### ✨ Features
+- RESTful API endpoints for first aid categories  
+- Integrated with Google Generative AI for natural guidance  
+- CORS and environment variable configuration  
+- Modular structure for easy maintenance  
+
+### 🧩 Tech Stack
+- Node.js + Express  
+- Google Generative AI  
+- dotenv, CORS, body-parser  
+
+---
+
+## 🧰 Getting Started
+
+### 🖥️ Prerequisites
+- [Node.js (LTS)](https://nodejs.org/)
+- npm (comes with Node)
+- Google AI API Key
+
+### ⚙️ Setup & Run
+
+#### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Frontend runs on **http://localhost:5173**
+
+#### Backend
+```bash
+cd backend2
+npm install
+npm run dev
+```
+Backend runs on **http://localhost:3000**
+
+---
+
+## 🔐 Environment Setup
+Create a `.env` file in `/backend2`:
+
+```bash
+GEMINI_API_KEY=your_api_key_here
+PORT=3001
+```
+
+### ✅ Security Tips
+- Never commit `.env` files  
+- Keep API keys private  
+- Use `.env.example` to document required variables  
+- Rotate keys periodically  
+
+---
+
+## 🛠️ Build for Production
+
+### Frontend
 ```bash
 cd frontend
 npm run build
 ```
 
-Backend:
+### Backend
 ```bash
 cd backend2
 npm start
 ```
 
-Dependencies
------------
-Frontend:
-- React 19
-- Material-UI 7
-- React Router 7
-- TypeScript
-- Vite
+---
 
-Backend:
-- Express
-- Google Generative AI
-- CORS
-- dotenv
-- body-parser
+## 🧩 Dependencies Summary
 
-Security Best Practices
----------------------
-1. Environment Variables:
-   - All sensitive configuration is stored in .env files
-   - .env files are excluded from version control
-   - Use .env.example to document required variables
+| Component | Key Libraries |
+|------------|----------------|
+| **Frontend** | React 19, TypeScript, Vite, Material UI, React Router |
+| **Backend**  | Express, Google Generative AI, dotenv, CORS, body-parser |
 
-2. API Keys:
-   - Never hardcode API keys in the source code
-   - Use environment variables for all API keys
-   - Rotate API keys regularly
-   - Use appropriate API key restrictions
+---
 
-3. Version Control:
-   - .gitignore is configured to exclude:
-     * Environment files (.env)
-     * Dependencies (node_modules)
-     * Build outputs (dist, build)
-     * IDE files (.vscode, .idea)
-     * System files (.DS_Store, Thumbs.db)
-     * Log files
-     * Temporary files
+## 🛡️ Security & Version Control
+
+**.gitignore includes:**
+- `.env` files  
+- `node_modules/`, `dist/`, `build/`  
+- IDE configs (`.vscode`, `.idea`)  
+- System files (`.DS_Store`, `Thumbs.db`)  
+- Logs and temporary files  
+
+---
+
+## 💡 Future Enhancements
+- ✅ Voice-assisted interaction  
+- ✅ AI-powered image recognition for injuries  
+- 🔜 Offline-first mobile support  
+- 🔜 Multi-language assistance  
+
+---
+
+<div align="center">
+
+👩‍💻 Developed by [**Sita Vaibhavi Gunturi**](https://github.com/Vaibhavi-Sita)  
+Built with ❤️ using React, Node.js, and Google Generative AI.
+
+</div>
