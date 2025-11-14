@@ -1,6 +1,6 @@
-# 🩺 Easy First Aid
+# Easy First Aid
 
-> **AI-Powered First Aid Assistant** – A modern web app that helps kids and older adults get quick, accessible, and reliable medical guidance during emergencies.
+A web application that provides AI assisted first aid guidance designed for clarity, accessibility, and ease of use. It helps children and older adults receive reliable instructions during common emergency situations.
 
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
@@ -11,7 +11,7 @@
 
 ---
 
-## 🖼️ Preview
+## Preview
 
 <p align="center">
   <img src="resources/images/landing.png" alt="Landing Page" width="22%"/>
@@ -22,34 +22,35 @@
 
 ---
 
-## 🚀 Overview
-Easy First Aid provides **AI-driven emergency instructions** through an intuitive and accessible web interface.  
-It integrates **Google Generative AI** for intelligent response generation and supports **voice & text guidance** for first aid scenarios.
+## Overview
+
+Easy First Aid provides step by step instructions for common first aid situations through an accessible interface. It uses Google Generative AI to deliver clear, context aware guidance. The platform supports both voice and text based interaction to support users with varied needs.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 EasyFirstAid/
-├── frontend/   # React + TypeScript + Vite + MUI
+├── frontend/   # React + TypeScript + Vite + Material UI
 └── backend2/   # Node.js + Express + Google Generative AI
 ```
 
-- **Frontend:** Modern, responsive UI with React, TypeScript, and Material-UI.  
-- **Backend:** RESTful Express server integrated with Google’s Generative AI for contextual guidance.  
-- **Security:** Environment variables handled via `.env`; CORS and API key isolation enforced.
+- Frontend: React based interface with TypeScript and Material UI, built for readability and accessibility.
+- Backend: Express server calling Google Generative AI to generate structured responses.
+- Security: Environment variables managed through .env, with CORS and API key isolation.
 
 ---
 
-## ⚙️ Quick Start
+## Quick Start
 
 ### Prerequisites
-- [Node.js (LTS)](https://nodejs.org)
-- npm (bundled with Node)
-- Google AI API Key
+- Node.js (LTS)
+- npm
+- Google Generative AI API Key
 
 ### Run Locally
+
 ```bash
 # Frontend
 cd frontend
@@ -61,46 +62,50 @@ cd backend2
 npm install
 npm run dev
 ```
-Frontend → **http://localhost:5173**  
-Backend → **http://localhost:3000**
+
+Frontend runs at: http://localhost:5173  
+Backend runs at: http://localhost:3000
 
 ---
 
-## 🔐 Environment Setup
-Create `.env` inside `backend2`:
+## Environment Setup
+
+Create a .env file inside backend2:
+
 ```
 GEMINI_API_KEY=your_api_key_here
 PORT=3001
 ```
 
-> 🧠 Keep `.env` private. Do not commit keys. Use `.env.example` to document required variables.
+Keep .env files private. Do not commit them to version control. Use an .env.example file to document required variables.
 
 ---
 
-## 🧩 Tech Stack
+## Tech Stack
 
 | Layer | Tools |
 |-------|--------|
-| **Frontend** | React 19 · TypeScript 5 · Vite · Material UI 7 · React Router 7 |
-| **Backend** | Node.js 20 · Express 5 · Google Generative AI · dotenv · CORS · body-parser |
+| Frontend | React 19, TypeScript 5, Vite, Material UI 7, React Router 7 |
+| Backend | Node.js 20, Express 5, Google Generative AI, dotenv, CORS, body-parser |
 
 ---
 
-## 🛡️ Highlights
-- Built for **accessibility** (visual clarity, readable layout, responsive design).  
-- **AI-powered** contextual answers with Google’s Generative AI.  
-- Modular full-stack setup for easy scaling and deployment.  
-- Secured API key and config management.
+## Key Features
+
+- Designed for accessibility and ease of understanding.
+- AI assisted instructions using Google Generative AI.
+- Modular and scalable full stack structure.
+- Secure configuration management with isolated API keys.
 
 ---
 
-## 💡 Future Enhancements
-- Voice-assisted interactions  
-- AI-based image recognition for injuries  
-- Offline-first mobile PWA support  
-- Multi-language assistance  
+## Future Enhancements
+
+- Voice assisted question and response flow.
+- AI based image analysis for injury identification.
+- Offline capable mobile PWA.
+- Additional language support.
 
 ---
 
-👩‍💻 **Developed by [Sita Vaibhavi Gunturi](https://github.com/Vaibhavi-Sita)**  
-Built with ❤️ using React, Node.js, and Google Generative AI.
+Developed by Sita Vaibhavi Gunturi  
